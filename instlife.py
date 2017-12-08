@@ -3,9 +3,11 @@ import os
 import sys
 import random
 
+cache_people = []
+
 class Person:
     def __init__(self, npc, is_random, name, age, sex, nationality, occupation, education, criminal_record, parents, finance):
-        if npc == True or is_random == True:
+        if is_random == True:
             self.is_random = True
             self.generate()
         else:
@@ -38,6 +40,10 @@ class Person:
             self.parents = generateParents(self.nationality)
             self.finance = None
         return True
+
+class Occupation:
+    def __init__(self):
+        return False
         
 def randomNationality():
     nationalities = ["American", "Mexican", "Canadian", "British", "Irish", "Spanish", "German", "Swedish", "Finnish", "Dutch", "Italian"]
@@ -62,5 +68,12 @@ def randomSex():
     if randint(0, 1) == 1:
         return "m"
     return "f"
+def randomAge(base):
+    age = random.randint(base - 20, base + 20)
+    if age < 10:
+        age == 10
+    return age
 def generateParents(nationality):
-    mother = Person(True, True, None, None, None, None, None, None, None, None, None) # Will incorportate finances and occupation later
+    mother = Person(True, False, randomName(nationality, "f"), randomAge(30), "f", nationality, None, None, None, None, None) # Will incorportate finances and occupation later
+    father = Person(True, False, randomName(nationality, "f"), randomAge(mother.age), "m", nationality, None, None, None, None, None)
+    return {"mother": mother, "father", father}
