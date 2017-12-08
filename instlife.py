@@ -35,7 +35,7 @@ def randomNationality():
 def randomName(nationality, sex):
     m_american = ["Noah", "Liam", "William", "Mason", "James", "Benjamin", "Jacob", "Elijah", "Michael", "Ethan", "Timothy", "Kyle", "David"]
     f_american = ["Emma", "Olivia", "Ava", "Sophia", "Isabella", "Mia", "Charlotte", "Abigail", "Emily", "Harper", "Starlow", "Elizabeth", "Ethel"]
-    m_mexican = ["José", "Juan", "Miguel", "Francisco", "Jesús", "Antonio", "Alejandro", "Pedro", "Carlos", "Jorge"]
+    m_mexican = ["José", "Juan", "Miguel", "Francisco", "Jesús", "Antonio", "Alejandro", "Pedro", "Carlos", "Jorge", "Victor"]
 def randomSex():
     if randint(0, 1) == 1:
         return "m"
